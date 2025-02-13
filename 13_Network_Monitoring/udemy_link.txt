@@ -1,0 +1,9 @@
+course link:course link:https://www.udemy.com/course/prometheus-course/?kw=prome&src=sac&couponCode=ST16MT28125
+course name: Prometheus | The Complete Hands-On for Monitoring & Alerting
+instructor: A to Z mentors
+
+
+course link:https://www.udemy.com/course/grafana-tutorial/?kw=grafana&src=sac&couponCode=ST16MT28125
+course name: Grafana
+Learn Grafana, the leading open source tool for visualizing metrics, time series data and application analytics.
+instructor: Sean Bradley

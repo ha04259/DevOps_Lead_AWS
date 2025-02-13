@@ -1,0 +1,224 @@
+exit status quiz
+
+1.All commands, including shell scripts, return an exit status.
+true
+Every Linux command returns an exit status in the form of an integer number, regardless if the command executed was a precompiled binary program or a shell script.
+
+
+2.Given the following options, which are the most comprehensive and valid Linux command exit statuses?
+ans: Exit statuses are integers that fall between 0 and 255. An exit status of zero (0) indicates success. A non-zero (1-255) exit status indicates failure.
+
+3.Which special variable contains the value of the exit status of the previously executed command?
+ans: $?
+
+example: mkdir dir1
+echo $?
+
+4.What symbol means "AND"?
+ans: &&
+
+5.What symbol means "OR"?
+ans: ||
+
+6.In the following example, if the mkdir command fails, the cp command will be executed.
+mkdir /tmp/bak && cp test.txt /tmp/bak/
+ans: false
+
+7.True or False. A command following a semicolon will be executed no matter the exit status of the command that preceded the semicolon.
+ans: true
+When commands are separated by a semicolon (;), they are executed in order, regardless of the exit status of the previous command(s). A command that follows a double ampersand (&&) will only execute if the exit status of the command preceding the double ampersands is non-zero.
+
+8. What is the exit status of the following shell script?
+#!/bin/bash 
+hostname
+uptime
+ans: The exit status of a shell script is the exit status of the last command executed in the shell script. To override this behavior, use the exit command followed by the desired exit status. All scripts and command have an exit status. Exit statuses fall between 0 and 255.
+
+9. If you want to specify exit status of a shell script, what command should you use?
+ans: The "return" command returns from a shell function. The "exit" command allows you to specify an exit status. Example: "exit 1". The remaining commands of "back" and "status" are not shell built-in commands.
+
+
+
+
+functions quiz
+1.In computer programming, DRY stands for:
+ans: don't repeat yourself
+
+2.Functions allow you to ___________.
+write a block code once and use it multiple times
+potentially reduce the length of your shell script
+maintain your script by reducing the number of places you need to edit and troubleshoot
+
+
+
+3.Functions can be defined anywhere in a script and be used at any time during a shell script.(true or false)
+ans:false
+
+4.What is the proper way to call the following function:
+
+function hello() {
+echo "Hello!"
+}
+ans:hello
+
+5.What is the output of the following shell script?
+#!/bin/bash
+function hello() {
+echo "Hello $2"
+}
+hello Tom Richard Harry
+
+ans: Hello Richard
+
+6.By default, all variables are local in scope. (true or false)
+false
+
+
+7.Precede a variable with what keyword to create a variable that is only available inside the function in which it is defined?
+ans:local
+
+8. Which command will cause a function to return with an exit status of "1"?
+return 1
+exit 1
+functions dont have exit statuses
+
+ans: return1
+
+
+wildcards:
+1.A wildcard is a character or string used for pattern matching.(true or false)
+ans:true
+
+2. A wildcard is a character or string used for pattern matching.
+zero or more any characters
+
+3. The "?" wildcard matches:
+just one of any character
+
+4.Which of the following match this wildcard:(ca or can or cap or cast)
+can
+
+5.Which of the following ls commands will display files that begin with the letters "a", "b", "c", or "d"?
+ls [a-d]*
+
+case statement:
+1.If you find yourself using an if statement to compare the same variable against different values, you can use a case statement in its place. (true or false)
+true
+
+2.Once a pattern has been matched, the commands following that pattern are executed until this is reached. (; or ;; or | or || or &)
+ans:;;
+
+3.If you wanted to run the same set of commands for two different values, you would separate those values with what character? (For example, you want your script to execute echo "You answered yes" when the value of $ANSWER matches either y or yes.)
+options: ; or | or &
+ans: |
+
+4.Wildcards can be used with case statements.(true or false)
+ans: true
+
+logging:
+1.The syslog standard uses facilities and severities to categorize messages.
+true
+2.Which is not a valid syslog severity?(options: warning or info or notice or verbose)
+ans: verbose
+3.Which command line utility can be used to generate syslog messages?(options: logit or logger or log or syslog)
+ans: logger
+
+
+while loops:
+1.A while loop is a loop that repeats a series of commands for as long as a given condition is _______.
+true
+2.True or False. A while loop used in conjunction with a read statements can only read data from a file.
+false
+3.True or False. The read command supports splitting the data it reads into multiple variables.
+true
+The read command is used to read a line of data and split it into fields. The line is split into fields using word splitting rules. The first word is assigned to the first variable supplied to the "read" command, the second word to the second variable, and so on, with any leftover words assigned to the last variable.
+4.If you want to exit a loop before it's normal ending, use the _______ statement.
+ans: break
+The "break" command is used to exit a "for", "while", or "unitl" loop, making it the correct answer. The "continue" command resumes a "for", "while", or "unitl" loop. The remaining commands are invalid.
+
+
+5.If you want to restart the loop at the next iteration before the loop completes, use the _________ statement.
+ans:continue
+The "continue" command resumes a "for", "while", or "unitl" loop, making it the correct answer. The "break" command is used to exit a "for", "while", or "unitl" loop. The remaining commands are invalid.
+
+
+debugging:
+1.A software bug is an error in a computer program that causes it to produce an unexpected or incorrect result.
+true
+2.Which Bash options can help in the process of debugging? (options: -x or -e or -v)
+ans:all
+3.Bash options can only be used one at a time.
+false
+4.The -e option causes a script to:
+ans:exit immediately if a command exists with a non-zero status
+5.The -v option causes a script to:
+print commands just like they appear inthe script without performing substitutions and expansions
+
+6.The -x option causes a script to:
+print commands and their arguments as they will be executed , including substitutions and expansions
+
+7.Which is of the following assigns a boolean value to the DEBUG variable?
+DEBUG=true
+
+8.Given the following shell script, what is displayed to the screen?
+
+#!/bin/bash
+DEBUG=true
+$DEBUG && echo "Debug mode ON."
+ans: Debug mode ON
+
+9.Using an editor that supports shell script syntax highlighting can help you to catch syntax errors.
+true
+10
+
+
+10.What variable determines what will be displayed before a command when using the "-x" (or set -x) option? (ps1 0r ps2 or ps3 or ps4)
+PS4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

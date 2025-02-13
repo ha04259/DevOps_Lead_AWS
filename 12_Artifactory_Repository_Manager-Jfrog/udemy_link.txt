@@ -1,0 +1,3 @@
+course link:https://www.udemy.com/course/learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker/?kw=learn+devops%3A&src=sac&couponCode=ST16MT28125
+course name: Learn DevOps: CI/CD with Jenkins using Pipelines and Docker
+instructor: Edward Viaene

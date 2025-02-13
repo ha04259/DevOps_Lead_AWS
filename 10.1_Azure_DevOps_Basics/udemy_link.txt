@@ -1,0 +1,5 @@
+courselink:https://www.udemy.com/course/azure100/?srsltid=AfmBOorRTCm6d5sIpyjK8hQUgc4bEF4-1lBlpgHb5L-dq1svTPdVFcSi&couponCode=ST9MT120225A
+course name: AZ-400 Designing and Implementing DevOps Certification
+instructor:Alan Rodrigues
+
+pracctice exams: https://www.udemy.com/course/aws-certified-devops-engineer-professional-practice-exam-dop/?_gl=1*1n2vpfc*_ga*MTQ5OTE2NzM4Ny4xNzM3OTU2MTAz*_ga_6GZZTGGX7H*MTczNzk1NjEwMy4xLjAuMTczNzk1NjEwMy42MC4wLjA.&couponCode=JAN_25_GET_STARTED

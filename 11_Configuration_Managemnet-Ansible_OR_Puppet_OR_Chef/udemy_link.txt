@@ -1,0 +1,12 @@
+chef course link:https://www.udemy.com/course/learn-chef/?kw=chef+for+for&src=sac&couponCode=ST16MT28125
+course name: Chef for the Absolute Beginners - DevOps
+instructor: kodekloud
+
+chef course link: https://www.udemy.com/course/learn-ansible/?kw=ansible+for+a&src=sac&couponCode=ST16MT28125
+course name: Ansible for the Absolute Beginner - Hands-On - DevOps
+instructor: kodekloud
+
+
+chef course link:https://www.udemy.com/course/power-puppet/?kw=master+puppet&src=sac&couponCode=ST16MT28125
+course name: Master Puppet for DevOps Success
+instructor: craig dunn

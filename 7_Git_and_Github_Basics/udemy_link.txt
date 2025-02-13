@@ -1,0 +1,3 @@
+course link:https://persistent.udemy.com/course/github-ultimate/learn/lecture/4493018#overview
+course name: GitHub Ultimate: Master Git and GitHub - Beginner to Expert
+instructor: Jason Taylor, John Myers

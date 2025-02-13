@@ -1,0 +1,3 @@
+course link: https://www.udemy.com/course/learn-kubernetes/?kw=kubernetes+for&src=sac&couponCode=ST16MT28125
+course name: Kubernetes for the Absolute Beginners - Hands-on
+instructor: Mumshad Mannambeth, Kodecloud

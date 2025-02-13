@@ -1,0 +1,3 @@
+course link:https://www.udemy.com/course/devsecops-fundamentals/?kw=devsecops&src=sac&couponCode=ST16MT28125
+course name: DevSecOps Fundamentals - Including Hands-On Demos
+instructor: Northern APT

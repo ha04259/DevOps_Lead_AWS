@@ -1,0 +1,72 @@
+1.Which of the following statements is true about Jenkins?
+ans: it is an automation tool written in java which can automatically build, test and deploy your code.
+2.What can be achieved with Jenkins?
+ans: Continuous integration
+3.Which of the following is the function of a slave machine within the Jenkins cluster?
+execute the buid jobs assigned by the master node
+4.Jenkins supports distributed builds.
+true
+5.What are the benefits of using Jenkins.
+ans:
+opensource tool with great community support
+a vast ecosystem of extensions and plugins
+robust and scalable
+all of the above
+
+
+1.Which of the following statements is correct about Jenkins?
+Correct answer. Jenkins is a powerful tool suitable for implement continuous integration and continuous delivery practices in software projects
+2.Which of the following build steps is suitable to execute a command line command on a Linux node within the Jenkins cluster?
+Correct answer. The Execute shell command is used to execute shell commands a Linux node within the Jenkins cluster
+3.What is the core functionality provided by the “Dashboard View” plugin for Jenkins?
+Correct answer. The Dashboard View plugin adds a new view implementation that provides a dashboard / portal-like view for Jenkins
+4.Before installing Jenkins, you need to make sure that appropriate version of Java is installed on your Jenkins node
+true
+5.Which of the following options enables you to manage what time and how often a build is triggered by Jenkins?
+Correct answer. The Poll SCM option enables you to manage what time and how often a build will be created in Jenkins
+
+
+gradle, jenkins and arti:
+1.What is BitBucket?
+Correct answer. BitBucket is a remote and free service for source code management
+2.While connecting Jenkins with GitLab, you do not need any special plugins, all you need is your HTTPS link. Is it true?
+Correct answer. While connecting Jenkins with GitLab, you need to add a special plugin for GitLab
+3.Which component is a Gradle-provided mechanism to "embed" the use of a specific Gradle version into a build, installing it if necessary?
+Correct answer. Gradle Wrapper allows Jenkins to "embed" the use of a specific Gradle version into a build, installing it if necessary
+4.Which of the following statement is true about a .war file?
+Correct answer. a .WAR file is an Web Application archive and contains JSPs, "normal" HTTP served files (HTML, images, etc.), servlets, tag libraries
+5.You should ensure that the Gradle build file is located in the root of your code
+Correct answer. The Gradle build file must be located in the root of your code
+
+
+maven,jenkins:
+1.What build step is the in-built mechanism Jenkins provides for build Maven projects?
+invoke top level maven projects
+Correct answer. This option is the in-built standard option available in Jenkins to build Maven projects
+2.What is the name of the build definition file for Maven?
+Correct answer. Maven build definition is called POM.xml
+3."Post-build action" is a Jenkins feature that can be used to chain or serialize build jobs.
+Correct answer. "Post-build action" is a Jenkins feature that can be used to chain or serialize build jobs
+4.Maven build artifacts cannot be published to Artifactory (true or false) -- false
+Correct answer. Maven, Jenkins and Artifactory can work very well together with the help of some Jenkins plugins
+5.Artifactory is a web application built on top of Apache Tomcat.
+Correct answer. Artifactory is a web application built on top of Apache Tomcat
+
+cicd for database, jenkins:
+1.Schema versioning, source control management and migration is a built in feature of most relational databases.
+Correct answer. These features are not part of most relational database products
+2.Sqitch cannot be integrated with Jenkins
+Correct answer. Sqitch can be integrated with Jenkins using shell commands
+3.Sqitch cannot verify whether the database changes were applied correctly to the target database or not.
+Correct answer. Sqitch has a built in mechanism for verification of schema changes (although we have to supply the verification scripts to Sqitch)
+
+
+operational consideration for jenkins:
+1.Anna is an administrator of a large organization having more than 500 employees and a complex network infrastructure. While defining security in Jenkins, which option would you recommend her for configuring TCP/IP connections between Jenkins master and slave nodes?
+Correct answer. Fixed port is the recommended option for configuring TCP/IP connections between Jenkins master and slave nodes in large and complex network infrastructure
+2.Which security feature is no longer supported by the latest version of Jenkins?
+Correct answer. The Delegate to servlet container option is deprecated and no longer supported by the latest version of Jenkins
+3.The Unix user group database option enables you to store information about your security rules and users within the Linux or Unix user datastore.
+Correct answer. The Unix user group database option enables you to store information about your security rules and users within the Linux or Unix user datastore
+4.Which of the following guidelines you should follow while configuring master and slave connections in Jenkins?
+Correct. You should not run jobs on master and you should always plan your slave nodes for high usage. Moreover your master node should be deployed in a robust hardware or virtual machine

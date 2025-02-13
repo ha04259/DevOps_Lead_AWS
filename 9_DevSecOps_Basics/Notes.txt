@@ -1,0 +1,177 @@
+Sure! Here's a structured outline for your DevSecOps Fundamentals session, including hands-on demos:
+
+### 1. Introduction to DevSecOps
+**DevSecOps** stands for Development, Security, and Operations. It is an approach that integrates security practices within the DevOps process. The goal is to ensure that security is a shared responsibility across the entire software development lifecycle (SDLC), from development to deployment and maintenance. This approach helps in identifying and mitigating security vulnerabilities early in the development process, reducing the risk of security breaches.
+reference: https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops?form=MG0AV3
+
+### 2. Introduction to SAST, DAST, and SCA
+**Static Application Security Testing (SAST)**: SAST tools analyze source code for vulnerabilities without executing the code. They are typically used early in the SDLC to catch issues during the coding phase.
+
+**Dynamic Application Security Testing (DAST)**: DAST tools test running applications for vulnerabilities by simulating attacks from the outside. They are used later in the SDLC to identify issues that might not be caught by SAST.
+
+**Software Composition Analysis (SCA)**: SCA tools analyze open-source components and libraries used in the application to identify known vulnerabilities and licensing issues. They help ensure that third-party components do not introduce security risks.
+reference: https://forwardsecurity.com/sast-sca-dast-iast-rasp-what-they-are-and-how-you-can-automate-application-security/?form=MG0AV3
+https://checkmarx.com/learn/sca/sca-sast-dast/?form=MG0AV3
+
+### 3. Hands-On Demos for SAST, DAST, and SCA
+#### Hands-On Demo for SAST
+1. **Tool Setup**: Use a tool like **SonarQube** or **SonarCloud**.
+2. **Integration**: Integrate the SAST tool with your CI/CD pipeline using Jenkins.
+3. **Analysis**: Run a scan on your codebase and review the results for vulnerabilities.
+
+#### Hands-On Demo for DAST
+1. **Tool Setup**: Use a tool like **OWASP ZAP**.
+2. **Integration**: Integrate the DAST tool with your CI/CD pipeline using Jenkins.
+3. **Analysis**: Perform a scan on your running application and review the results for vulnerabilities.
+
+#### Hands-On Demo for SCA
+1. **Tool Setup**: Use a tool like **Snyk**.
+2. **Integration**: Integrate the SCA tool with your CI/CD pipeline using Jenkins.
+3. **Analysis**: Run an analysis on your project's dependencies and review the results for vulnerabilities and licensing issues.
+
+Reference: https://www.udemy.com/course/devsecops-with-sast-sca-dast/?form=MG0AV3&couponCode=ST16MT28125
+Would you like more detailed steps for any of these demos?
+
+
+Got it! Let's iterate and provide even more detailed steps for the hands-on demos of SAST, DAST, and SCA, integrated with Jenkins.
+
+### Hands-On Demo for SAST (Using SonarQube)
+
+**1. Tool Setup:**
+- **Download and Install**: 
+  - Download SonarQube from [SonarQube's official site](https://www.sonarqube.org/downloads/).
+  - Extract the downloaded files and start the SonarQube server by running the `StartSonar.bat` (Windows) or `StartSonar.sh` (Mac/Linux) script.
+  - Open a web browser and navigate to `http://localhost:9000` to access the SonarQube dashboard. Default credentials are `admin/admin`.
+
+**2. Configure Jenkins Integration:**
+- **Install SonarQube Scanner Plugin**:
+  - In Jenkins, go to **Manage Jenkins** > **Manage Plugins**.
+  - Search for "SonarQube Scanner" and install it without restarting Jenkins.
+- **Configure SonarQube in Jenkins**:
+  - Go to **Manage Jenkins** > **Configure System**.
+  - Scroll down to **SonarQube servers** and click on **Add SonarQube**.
+  - Provide a name for your SonarQube instance and the server URL (e.g., `http://localhost:9000`).
+  - Add the SonarQube authentication token you generated from the SonarQube dashboard.
+
+**3. Pipeline Configuration and Analysis:**
+- **Create a Pipeline Job**:
+  - In Jenkins, create a new item and select **Pipeline**.
+- **Pipeline Script**:
+  - Add the following pipeline script to run a SonarQube scan:
+    ```groovy
+    pipeline {
+        agent any
+        stages {
+            stage('Checkout') {
+                steps {
+                    checkout scm
+                }
+            }
+            stage('SonarQube Analysis') {
+                environment {
+                    scannerHome = tool 'SonarQube Scanner'
+                }
+                steps {
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+    }
+    ```
+- **Run the Job**:
+  - Save the pipeline and run the job.
+  - Review the scan results on the SonarQube dashboard.
+
+### Hands-On Demo for DAST (Using OWASP ZAP)
+
+**1. Tool Setup:**
+- **Download and Install**:
+  - Download OWASP ZAP from [OWASP ZAP's official site](https://www.zaproxy.org/download/).
+  - Install and launch OWASP ZAP.
+
+**2. Configure Jenkins Integration:**
+- **Install OWASP ZAP Plugin**:
+  - In Jenkins, go to **Manage Jenkins** > **Manage Plugins**.
+  - Search for "OWASP ZAP" and install it without restarting Jenkins.
+- **Configure ZAP in Jenkins**:
+  - Go to **Manage Jenkins** > **Configure System**.
+  - Scroll down to **OWASP ZAP** and add a new ZAP installation by providing the path to the ZAP executable.
+
+**3. Pipeline Configuration and Analysis:**
+- **Create a Pipeline Job**:
+  - In Jenkins, create a new item and select **Pipeline**.
+- **Pipeline Script**:
+  - Add the following pipeline script to run a ZAP scan:
+    ```groovy
+    pipeline {
+        agent any
+        stages {
+            stage('Checkout') {
+                steps {
+                    checkout scm
+                }
+            }
+            stage('OWASP ZAP Scan') {
+                steps {
+                    zap(
+                        zapHome: '/path/to/ZAP',
+                        target: 'http://your-web-app-url.com',
+                        scanType: 'baseline'
+                    )
+                }
+            }
+        }
+    }
+    ```
+- **Run the Job**:
+  - Save the pipeline and run the job.
+  - Review the scan results in the OWASP ZAP UI.
+
+### Hands-On Demo for SCA (Using Snyk)
+
+**1. Tool Setup:**
+- **Sign Up and Install Snyk**:
+  - Sign up for a Snyk account at [Snyk's official site](https://snyk.io/).
+  - Install the Snyk CLI by running `npm install -g snyk` or download it from the Snyk website.
+  - Authenticate the CLI by running `snyk auth` and following the prompts.
+
+**2. Configure Jenkins Integration:**
+- **Install Snyk Security Plugin**:
+  - In Jenkins, go to **Manage Jenkins** > **Manage Plugins**.
+  - Search for "Snyk Security" and install it without restarting Jenkins.
+- **Configure Snyk in Jenkins**:
+  - Go to **Manage Jenkins** > **Configure System**.
+  - Scroll down to **Snyk** and add a new Snyk installation by providing the path to the Snyk CLI.
+
+**3. Pipeline Configuration and Analysis:**
+- **Create a Pipeline Job**:
+  - In Jenkins, create a new item and select **Pipeline**.
+- **Pipeline Script**:
+  - Add the following pipeline script to run a Snyk scan:
+    ```groovy
+    pipeline {
+        agent any
+        stages {
+            stage('Checkout') {
+                steps {
+                    checkout scm
+                }
+            }
+            stage('Snyk Analysis') {
+                steps {
+                    script {
+                        sh 'snyk monitor'
+                        sh 'snyk test'
+                    }
+                }
+            }
+        }
+    }
+    ```
+- **Run the Job**:
+  - Save the pipeline and run the job.
+  - Review the scan results on the Snyk dashboard.
+
+Feel free to reach out if you have any questions or need further assistance with these demos!

@@ -1,0 +1,5 @@
+https://persistent.udemy.com/course/bash-scripting/learn/lecture/5748090#overview
+
+course name: DevOps: CI/CD with Jenkins pipelines, Maven, Gradle
+Build continuous integration, continuous delivery and DevOps pipelines with Java, Gradle, Maven, Artifactory & Sqitch.
+instructor: Manuj Aggarwal, TetraNoodle Team

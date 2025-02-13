@@ -1,0 +1,3 @@
+http://localhost:8080/
+http://localhost:8080/user/admin/
+http://localhost:8080/env-vars.html/

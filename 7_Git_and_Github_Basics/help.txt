@@ -1,0 +1,17 @@
+help pages: git help
+
+git config --global --list
+
+cat ~/.gitconfig
+
+
+----------------------
+initialize 
+git init demo
+
+ local git states
+ working directory
+ staging area
+ local repositroy (.git folder)
+ 
+ Remote

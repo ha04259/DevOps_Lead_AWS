@@ -1,0 +1,3 @@
+course link: https://persistent.udemy.com/course/the-complete-cloud-computing-software-architecture-patterns/learn/lecture/30214306?learning_path_id=4890690#overview
+course name: The Complete Cloud Computing Software Architecture Patterns
+instructor: Michael Pogrebinsky | Software Architecture, System Design, Java Expert
